@@ -1,4 +1,4 @@
-package fr.excilys.factureparking.vehicle;
+package fr.excilys.factureparking.modele.vehicle;
 
 public class Moto extends Vehicule {
 
