@@ -20,7 +20,7 @@ public enum EReduction {
 	 */
 	private EReduction(String property) {
 		Properties prop = new Properties();
-		try(InputStream input = getClass().getClassLoader().getResourceAsStream("tarif.properties");){
+		try(InputStream input = getClass().getClassLoader().getResourceAsStream("parking.properties");){
 			prop.load(input);
 			this.pourcentage = Integer.valueOf(prop.getProperty(property));
 		} catch (IOException | NumberFormatException e) {

@@ -9,7 +9,7 @@ public class Facture {
 
 	private final Vehicule vehicule;
 	private final Duration dureeStationement;
-	private final int montantDu;
+	private final double montantDu;
 	
 	public Facture(Vehicule vehicule, LocalDateTime dateDeDebut, LocalDateTime dateDeFin) {
 		this.vehicule = vehicule;
@@ -25,7 +25,7 @@ public class Facture {
 		return this.dureeStationement;
 	}
 
-	public int getMontantDu() {
+	public double getMontantDu() {
 		return this.montantDu;
 	}
 	

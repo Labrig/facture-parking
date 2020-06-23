@@ -24,49 +24,49 @@ class TarifTest {
 	
 	@Test
 	void testCalculeMontantVoitureDureePositive() {
-		int result = Tarif.getInstance().calculeMontanDu(this.voiture, Duration.ofMinutes(2));
+		double result = Tarif.getInstance().calculeMontanDu(this.voiture, Duration.ofMinutes(2));
 		assertEquals(2, result);
 	}
 	
 	@Test
 	void testCalculeMontantVoitureDureePositive2() {
-		int result = Tarif.getInstance().calculeMontanDu(this.voiture, Duration.ofHours(4));
+		double result = Tarif.getInstance().calculeMontanDu(this.voiture, Duration.ofHours(4));
 		assertEquals(8, result);
 	}
 	
 	@Test
 	void testCalculeMontantVoitureDureeNul() {
-		int result = Tarif.getInstance().calculeMontanDu(this.voiture, Duration.ofMinutes(0));
+		double result = Tarif.getInstance().calculeMontanDu(this.voiture, Duration.ofMinutes(0));
 		assertEquals(0, result);
 	}
 	
 	@Test
 	void testCalculeMontantVoitureDureeNegative() {
-		int result = Tarif.getInstance().calculeMontanDu(this.voiture, Duration.ofMinutes(-2));
+		double result = Tarif.getInstance().calculeMontanDu(this.voiture, Duration.ofMinutes(-2));
 		assertEquals(2, result);
 	}
 	
 	@Test
 	void testCalculeMontantMotoDureePositive() {
-		int result = Tarif.getInstance().calculeMontanDu(this.moto, Duration.ofMinutes(2));
+		double result = Tarif.getInstance().calculeMontanDu(this.moto, Duration.ofMinutes(2));
 		assertEquals(1, result);
 	}
 	
 	@Test
 	void testCalculeMontantMotoDureePositive2() {
-		int result = Tarif.getInstance().calculeMontanDu(this.moto, Duration.ofHours(4));
+		double result = Tarif.getInstance().calculeMontanDu(this.moto, Duration.ofHours(4));
 		assertEquals(4, result);
 	}
 	
 	@Test
 	void testCalculeMontantMotoDureeNul() {
-		int result = Tarif.getInstance().calculeMontanDu(this.moto, Duration.ofMinutes(0));
+		double result = Tarif.getInstance().calculeMontanDu(this.moto, Duration.ofMinutes(0));
 		assertEquals(0, result);
 	}
 	
 	@Test
 	void testCalculeMontantMotoDureeNegative() {
-		int result = Tarif.getInstance().calculeMontanDu(this.moto, Duration.ofMinutes(-2));
+		double result = Tarif.getInstance().calculeMontanDu(this.moto, Duration.ofMinutes(-2));
 		assertEquals(1, result);
 	}
 

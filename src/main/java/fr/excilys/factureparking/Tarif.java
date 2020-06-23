@@ -15,9 +15,9 @@ public class Tarif {
 	
 	private Tarif() {
 		Properties prop = new Properties();
-		try(InputStream input = getClass().getClassLoader().getResourceAsStream("tarif.properties");){
+		try(InputStream input = getClass().getClassLoader().getResourceAsStream("parking.properties");){
 			prop.load(input);
-			this.horaire = Integer.valueOf(prop.getProperty("horaire"));
+			this.horaire = Integer.valueOf(prop.getProperty("tarif.horaire"));
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -38,9 +38,9 @@ public class Tarif {
 		return this.horaire;
 	}
 	
-	public int calculeMontanDu(Vehicule vehicule, Duration dureeStationement) {
+	public double calculeMontanDu(Vehicule vehicule, Duration dureeStationement) {
 		double taux = 1 - vehicule.getReduction().getPourcentage()/100.0;
-		int nombreHeureContabilise = (int)(dureeStationement.toHours() + (dureeStationement.toMinutes()%60 != 0 ? 1 : 0));
-		return (int)(nombreHeureContabilise * this.horaire * taux);
+		long nombreHeureContabilise = dureeStationement.toHours() + (dureeStationement.toMinutes()%60 != 0 ? 1 : 0);
+		return nombreHeureContabilise * this.horaire * taux;
 	}
 }
