@@ -7,7 +7,7 @@ import java.time.Duration;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import fr.excilys.factureparking.modele.ETarif;
+import fr.excilys.factureparking.controller.ETarif;
 import fr.excilys.factureparking.modele.vehicle.EPropulsion;
 import fr.excilys.factureparking.modele.vehicle.Moto;
 import fr.excilys.factureparking.modele.vehicle.Voiture;

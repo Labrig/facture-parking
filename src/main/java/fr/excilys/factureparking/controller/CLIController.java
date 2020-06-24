@@ -1,12 +1,12 @@
 package fr.excilys.factureparking.controller;
 
+import java.time.Duration;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.format.DateTimeParseException;
 import java.util.InputMismatchException;
 
-import fr.excilys.factureparking.modele.ETarif;
 import fr.excilys.factureparking.modele.Facture;
 import fr.excilys.factureparking.modele.vehicle.EPropulsion;
 import fr.excilys.factureparking.modele.vehicle.Moto;
@@ -96,8 +96,10 @@ public class CLIController {
 			heureDepart = heureDepart.plusDays(1);
 		}
 		
+		Duration dureeStationnement = Duration.between(heureArrive, heureDepart);
+		
 		//Calcule et affichage de la facture
-		Facture facture = new Facture(vehicule, heureArrive, heureDepart, ETarif.HORAIRE);
+		Facture facture = new Facture(vehicule, dureeStationnement, ETarif.HORAIRE.calculeMontantDu(vehicule, dureeStationnement));
 		afficherFacture(facture);
 	}
 }

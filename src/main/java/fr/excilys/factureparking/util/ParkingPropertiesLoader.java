@@ -4,9 +4,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
+import fr.excilys.factureparking.controller.ETarif;
 import fr.excilys.factureparking.exception.ParkingPropertiesNotFoundException;
 import fr.excilys.factureparking.exception.ParkingPropertyDoubleCastException;
-import fr.excilys.factureparking.modele.ETarif;
 import fr.excilys.factureparking.modele.vehicle.EReduction;
 
 public class ParkingPropertiesLoader {

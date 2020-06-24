@@ -1,7 +1,6 @@
 package fr.excilys.factureparking.modele;
 
 import java.time.Duration;
-import java.time.LocalDateTime;
 
 import fr.excilys.factureparking.modele.vehicle.Vehicule;
 
@@ -11,10 +10,10 @@ public class Facture {
 	private final Duration dureeStationnement;
 	private final double montantDu;
 	
-	public Facture(Vehicule vehicule, LocalDateTime dateDeDebut, LocalDateTime dateDeFin, ETarif tarif) {
+	public Facture(Vehicule vehicule, Duration dureeStationnement, double montantDu) {
 		this.vehicule = vehicule;
-		this.dureeStationnement = Duration.between(dateDeDebut, dateDeFin);
-		this.montantDu = tarif.calculeMontantDu(this.vehicule, this.dureeStationnement);
+		this.dureeStationnement = dureeStationnement;
+		this.montantDu = montantDu;
 	}
 
 	public Vehicule getVehicule() {

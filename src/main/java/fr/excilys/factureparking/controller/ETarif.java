@@ -1,4 +1,4 @@
-package fr.excilys.factureparking.modele;
+package fr.excilys.factureparking.controller;
 
 import java.time.Duration;
 
